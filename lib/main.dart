@@ -596,6 +596,50 @@ class DetailChatRoute extends State<DetailChatWidget>
       "message": "hadehh",
       "isUser": false,
     },
+    {
+      "message": "hi",
+      "isUser": false,
+    },
+    {
+      "message": "ada apa?",
+      "isUser": true,
+    },
+    {
+      "message": "gapapa",
+      "isUser": false,
+    },
+    {
+      "message": "gabut ya?",
+      "isUser": false,
+    },
+    {
+      "message": "iya ni",
+      "isUser": true,
+    },
+    {
+      "message": "wkwk",
+      "isUser": false,
+    },
+    {
+      "message": "how's ur day hari ini?",
+      "isUser": false,
+    },
+    {
+      "message": "baikk, hbu?",
+      "isUser": true,
+    },
+    {
+      "message": "cuek amat si",
+      "isUser": false,
+    },
+    {
+      "message": "yaaa mau ngobrol apa lagi",
+      "isUser": true,
+    },
+    {
+      "message": "hadehh",
+      "isUser": false,
+    },
   ];
 
   @override
