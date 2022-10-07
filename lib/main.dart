@@ -553,93 +553,80 @@ class DetailChatRoute extends State<DetailChatWidget>
     with TickerProviderStateMixin {
   var data = [
     {
-      "message": "hi",
+      "message": "ric",
       "isUser": false,
+      "first": true
     },
     {
-      "message": "ada apa?",
+      "message": "richard iku lapo",
+      "isUser": false,
+      "first": false
+    },
+    {
+      "message": "gaji aku kecil lo di kasi ama dia",
+      "isUser": false,
+      "first": false
+    },
+    {
+      "message": "lah gaopo nu koe kan wes kerja, di ajarin ambe ak ambe dion ambe richard",
       "isUser": true,
+      "first": true
     },
     {
-      "message": "gapapa",
-      "isUser": false,
-    },
-    {
-      "message": "gabut ya?",
-      "isUser": false,
-    },
-    {
-      "message": "iya ni",
+      "message": "skrg iku lagi resisi idup susah nu nyari duit iku susah, jangan ngeluh terus nu",
       "isUser": true,
+      "first": false
     },
     {
-      "message": "wkwk",
+      "message": "ya pie ric, aku butuh hidupin keluarga aku tiap hari makan e lontong balap tok",
       "isUser": false,
+      "first": true
     },
     {
-      "message": "how's ur day hari ini?",
+      "message": "richard iku lo ambil gaji aku 3 bulan ",
       "isUser": false,
+      "first": false
     },
     {
-      "message": "baikk, hbu?",
+      "message": "pie ric",
+      "isUser": false,
+      "first": false
+    },
+    {
+      "message": "ya gini ae lek ga mau tak kasi tau richard kalo koe ga mau di sosbread",
       "isUser": true,
+      "first": true
     },
     {
-      "message": "cuek amat si",
-      "isUser": false,
-    },
-    {
-      "message": "yaaa mau ngobrol apa lagi",
+      "message": "aku cape nu nasehatin koe nu, iku batu nu",
       "isUser": true,
+      "first": false
     },
     {
-      "message": "hadehh",
-      "isUser": false,
-    },
-    {
-      "message": "hi",
-      "isUser": false,
-    },
-    {
-      "message": "ada apa?",
+      "message": "kasian lo richard mati2an belain koe biar masuk sosbread biar koe kerja dapat lingkungan sama experince startup",
       "isUser": true,
+      "first": false
     },
     {
-      "message": "gapapa",
-      "isUser": false,
-    },
-    {
-      "message": "gabut ya?",
-      "isUser": false,
-    },
-    {
-      "message": "iya ni",
+      "message": "iku ga mudah lo",
       "isUser": true,
+      "first": false
     },
     {
-      "message": "wkwk",
+      "message": "ya ttep ae ric, aku soal e mau bikin bisnis kecil2an sama istri aku ric buat masa tua",
       "isUser": false,
+      "first": true
     },
     {
-      "message": "how's ur day hari ini?",
+      "message": "umur wes segini soal e",
       "isUser": false,
+      "first": false
     },
     {
-      "message": "baikk, hbu?",
-      "isUser": true,
-    },
-    {
-      "message": "cuek amat si",
+      "message": "aku itu kesel ric richard iku suruh aku banyak hal dan dia mau semuanya cepat, sedangkan aku otak ku iku kecil ga secepat koe",
       "isUser": false,
-    },
-    {
-      "message": "yaaa mau ngobrol apa lagi",
-      "isUser": true,
-    },
-    {
-      "message": "hadehh",
-      "isUser": false,
-    },
+      "first": false
+    }
   ];
 
   @override
@@ -665,8 +652,7 @@ class DetailChatRoute extends State<DetailChatWidget>
                     width: 32,
                     height: 32,
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          "https://i.pinimg.com/474x/97/7f/e7/977fe798cf2c3a037e7aa9af6ce4b9d1.jpg"),
+                      backgroundImage: AssetImage("assets/img.png"),
                     )),
                 Container(
                   width: 2,
@@ -677,7 +663,7 @@ class DetailChatRoute extends State<DetailChatWidget>
                     children: const [
                       Padding(
                           padding: EdgeInsets.only(bottom: 2.5, left: 5),
-                          child: Text("Orang aneh",
+                          child: Text("Ibnu Fajar",
                               style: TextStyle(
                                   color: Colors.white, fontSize: 13))),
                       Padding(
@@ -719,44 +705,49 @@ class DetailChatRoute extends State<DetailChatWidget>
       ),
       body: Container(
         decoration: const BoxDecoration(color: Color(0xff181c24)),
-        child: ListView.builder(
-            itemCount: data.length,
-            itemBuilder: (BuildContext context, int index) {
-              bool isUser = data[index]["isUser"] == true;
-              String message = "${data[index]["message"]}";
-              return Align(
-                  alignment: isUser ? Alignment.topRight : Alignment.topLeft,
-                  child: Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        decoration: BoxDecoration(
-                            color: isUser
-                                ? const Color(0xff01a984)
-                                : const Color(0xff202c34),
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: const Radius.circular(22.5),
-                                bottomRight: const Radius.circular(22.5),
-                                topRight: Radius.circular(isUser ? 0 : 22.5),
-                                topLeft: Radius.circular(isUser ? 22.5 : 0))),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Text(
-                                    message,
-                                    style: const TextStyle(color: Colors.white),
-                                  )),
-                              const Padding(
-                                  padding: EdgeInsets.only(right: 13, bottom: 5),
-                                  child: Text("20:55",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 7.5)))
-                            ]),
-                      )));
-            }),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 50, left: 10, right: 10),
+          child: ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (BuildContext context, int index) {
+                bool isUser = data[index]["isUser"] == true;
+                bool first = data[index]["first"] == true;
+                String message = "${data[index]["message"]}";
+                return Align(
+                    alignment: isUser ? Alignment.topRight : Alignment.topLeft,
+                    child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width / 1.75),
+                          decoration: BoxDecoration(
+                              color: isUser
+                                  ? const Color(0xff075E54)
+                                  : const Color(0xff202c34),
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: const Radius.circular(22.5),
+                                  bottomRight: const Radius.circular(22.5),
+                                  topRight: Radius.circular(!first ? 22.5 : (isUser ? 0 : 22.5)),
+                                  topLeft: Radius.circular(!first ? 22.5 : (isUser ? 22.5 : 0)))),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Text(
+                                      message,
+                                      style: const TextStyle(color: Colors.white),
+                                    )),
+                                const Padding(
+                                    padding: EdgeInsets.only(right: 13, bottom: 5),
+                                    child: Text("20:55",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 7.5)))
+                              ]),
+                        )));
+              })
+        ),
       ),
       floatingActionButton: Container(
           transform: Matrix4.translationValues(0, 10, 0),
@@ -804,7 +795,7 @@ class DetailChatRoute extends State<DetailChatWidget>
               width: 43,
               height: 45,
               decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: Color(0xff01a984)),
+                  shape: BoxShape.circle, color: Color(0xff075E54)),
               child: const Icon(Icons.mic, color: Colors.white),
             )
           ])),
