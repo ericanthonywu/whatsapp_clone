@@ -725,10 +725,10 @@ class DetailChatRoute extends State<DetailChatWidget>
                                   ? const Color(0xff075E54)
                                   : const Color(0xff202c34),
                               borderRadius: BorderRadius.only(
-                                  bottomLeft: const Radius.circular(22.5),
-                                  bottomRight: const Radius.circular(22.5),
-                                  topRight: Radius.circular(!first ? 22.5 : (isUser ? 0 : 22.5)),
-                                  topLeft: Radius.circular(!first ? 22.5 : (isUser ? 22.5 : 0)))),
+                                  bottomLeft: const Radius.circular(13),
+                                  bottomRight: const Radius.circular(13),
+                                  topRight: Radius.circular(!first ? 13 : (isUser ? 0 : 13)),
+                                  topLeft: Radius.circular(!first ? 13 : (isUser ? 13 : 0)))),
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               mainAxisSize: MainAxisSize.min,
@@ -739,11 +739,19 @@ class DetailChatRoute extends State<DetailChatWidget>
                                       message,
                                       style: const TextStyle(color: Colors.white),
                                     )),
-                                const Padding(
-                                    padding: EdgeInsets.only(right: 13, bottom: 5),
-                                    child: Text("20:55",
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 7.5)))
+                                Padding(
+                                    padding: const EdgeInsets.only(right: 13, bottom: 5),
+                                    child: Row(
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text("20:55",
+                                            style: TextStyle(
+                                                color: Colors.grey, fontSize: 12)),
+                                        isUser ? const Icon(Icons.check, size: 17, color: Colors.grey) : const Text("")
+                                      ],
+                                    )
+                                )
                               ]),
                         )));
               })
